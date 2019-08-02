@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./util.js"></script>
+</head>
+
+<body>
+  <script>
+    function selection(arr) {
+      checkArray(arr);
+      for (let i = 0; i < arr.length - 1; i++) {
+        let minIndex = i;
+        for (let j = i + 1; j < arr.length; j++) {
+          minIndex = arr[j] < arr[minIndex] ? j : minIndex
+        }
+        swap(arr, minIndex, i);
+      }
+      return arr;
+    }
+    var a = [1, 8, 7, 89, 78, 48, 46, 13];
+    console.log(selection([1, 5, 6, 4, 6, 4, 45, 8, 1]))
+  </script>
+</body>
+
+</html>

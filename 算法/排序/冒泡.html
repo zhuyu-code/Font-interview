@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./util.js"></script>
+</head>
+
+<body>
+  <script>
+    function bubble(arr) {
+      checkArray(arr);
+      for (let i = arr.length - 1; i > 0; i--) {
+        for (let j = 0; j < arr.length; j++) {
+          if (arr[j] > arr[j + 1]) {
+            swap(arr, j, j + 1)
+          }
+        }
+      }
+      return arr;
+    }
+    arr = [1, 5, 6, 4, 6, 4, 8, 1]
+    console.log(bubble(arr))
+    //该算法的操作次数是一个等差数列 n + (n - 1) + (n - 2) + 1 ，去掉常数项以后得出时间复杂度是 O(n * n)  
+  </script>
+</body>
+
+</html>

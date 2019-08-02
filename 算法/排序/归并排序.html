@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./util.js"></script>
+</head>
+
+<body>
+  <script>
+    // 先递归后排序,原理是将两个有序的数组合并在一起，这个有序的数组再由两个有序数组合并在一起，不断递归拆分。
+    // 递归拆分两个数组
+
+
+    function merge(left, right) {
+      var temp = [];
+      while (left.length > 0 && right.length > 0) {
+        var x = left.shift();
+        var y = right.shift();
+        if (x <= y) {
+          temp.push(x);
+          right.unshift(y);
+        } else {
+          temp.push(y);
+          left.unshift(x);
+        }
+      }
+      if (left.length == 0)
+        return temp.concat(right)
+      else
+        return temp.concat(left)
+    }
+
+    function sort(arr) {  
+      checkArray(arr)
+      if (arr.length <= 1)
+        return arr;
+      var left = arr.slice(0, arr.length / 2);
+      var right = arr.slice(arr.length / 2);
+      return merge(sort(left), sort(right))
+    }
+    console.log(sort([1, 4, 8, 7, 1, 5, 4, 9]))
+  </script>
+</body>
+
+</html>
