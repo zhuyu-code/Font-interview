@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var set = new Set(["zhuyu", 1, "1"]);
+        console.log(set);
+        set.add("zhuyu2");
+        console.log(set);
+        set.delete("zhuyu");
+        console.log(set);
+        console.log(set.has(1));
+        console.log(set.size);
+        console.log(Array.from(set));
+        console.log("开始")
+        set.forEach(item => {
+            console.log(item)
+        })
+        console.log("for of开始")
+        for (let i of set) {
+            console.log(i)
+        }
+    </script>
+</body>
+
+</html>
