@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script type="text/html">
+    setTimeout(function () {
+    console.log("zhuyu")
+    });
+    new Promise((resolve, reject) => {
+    resolve()
+    })
+    .then(
+    function () {
+    console.log("zhuyu2")
+    }
+    )
+    /*
+    zhuyu2
+    zhuyu
+    */
+  </script>
+  <script type="text/html">
+    setTimeout(function () {
+    console.log('setTimeout');
+    })
+
+    new Promise(function (resolve) {
+    console.log('promise');
+    resolve()
+    }).then(function () {
+    console.log('then');
+    })
+
+    console.log('console');
+    /*
+    promise
+    console
+    then
+    settimeout
+    */
+  </script>
+  <script>
+    console.log('1');
+
+    setTimeout(function () {
+      console.log('2');
+      new Promise(function (resolve) {
+        console.log('4');
+        resolve();
+      }).then(function () {
+        console.log('5')
+      })
+    })
+    new Promise(function (resolve) {
+      console.log('7');
+      resolve();
+    }).then(function () {
+      console.log('8')
+    })
+
+    setTimeout(function () {
+      console.log('9');
+      new Promise(function (resolve) {
+        console.log('11');
+        resolve();
+      }).then(function () {
+        console.log('12')
+      })
+    })
+    //结果
+    //1 7 8 2 4 11 12
+  </script>
+</body>
+
+</html>
