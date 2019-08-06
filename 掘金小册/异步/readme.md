@@ -22,3 +22,45 @@
 ### 5. node和浏览器执行的区别
 浏览器：主线程------所有微任务-----一个宏任务-----所有微任务queue------一个宏任务
 node：主线程-------所有微任务------所有宏任务-----所有微任务
+## async,await,Generator之间的关系
+[async和await原理](https://juejin.im/post/5cd2ce1e6fb9a032092ea160#heading-9)
+* Generator是ES6标准引入的新的数据类型。Generator可以理解为一个状态机，内部封装了很多状态，同时返回一个迭代器Iterator对象。可以通过这个迭代器遍历相关的值及状态。
+*  Generator的显著特点是可以多次返回，每次的返回值作为迭代器的一部分保存下来，可以被我们显式调用。  
+一般的函数使用function声明，return作为回调(没有遇到return，在结尾调用return undefined)，只可以回调一次。而Generator函数使用function*定义，除了return，还使用yield返回多次。
+* return为generator函数close状态，无法捕获，yield为暂停状态，可以通过next一层一层的调用
+* generator函数拥有三个方法next/return/throw  
+1. next方式是按步执行，每次返回一个值,同时也可以每次传入新的值作为计算
+```
+function* foo(x) {
+    let a = yield x + 1;
+    let b= yield a + 2;
+    return x + 3;
+}
+const result = foo(0) // foo {<suspended>}
+result.next(1);  // {value: 1, done: false}
+result.next(2);  // {value: 4, done: false}
+result.next(3);  // {value: 3, done: true}
+result.next(4);  //{value: undefined, done: true}
+```
+2. return则直接跳过所有步骤，直接返回 {value: undefined, done: true}
+3. throw则根据函数中书写try catch返回catch中的内容，如果没有写try，则直接抛出异常
+```
+function* foo(x) {
+  try{
+    yield x+1
+    yield x+2
+    yield x+3
+    yield x+4
+    
+  }catch(e){
+    console.log('catch it')
+  }
+}
+const result = foo(0) // foo {<suspended>}
+result.next();  // {value: 1, done: false}
+result.next();  // {value: 2, done: false}
+result.throw();  // catch it {value: undefined, done: true}
+result.next();  //{value: undefined, done: true}
+
+```
+执行throw的时候，还没有进入到try语句，所以直接抛错，抛出undefined为throw未传参数，如果传入参数则显示为传入的参数。此状态与未写try的抛错状态一致。

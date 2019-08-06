@@ -3,7 +3,7 @@
  * @version: 
  * @Author: 朱宇
  * @Date: 2019-08-05 23:10:42
- * @LastEditTime: 2019-08-05 23:11:01
+ * @LastEditTime: 2019-08-06 16:09:56
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -14,6 +14,69 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+<script type="text/html">
+  function* foo(x) {
+  yield x + 1;
+  yield x + 2;
+  return x + 3;
+  }
+  const result = foo(0) // foo {<suspended>}
+    console.log(result.next())
+    console.log(result.next())
+    console.log(result.next())
+    console.log(result.next())
+    //1 2 3 undefined
+</script>
+<script type="text/html">
+  function* foo(x) {
+  try {
+  yield x + 1
+  yield x + 2
+  yield x + 3
+  yield x + 4
+
+  } catch (e) {
+  console.log('catch it are')
+  }
+  }
+  const result = foo(0) // foo {<suspended>}
+    result.next(); // {value: 1, done: false}
+    result.next(); // {value: 2, done: false}
+    result.throw(); // catch it {value: undefined, done: true}
+    result.next(); //{value: undefined, done: true}
+</script>
+<script>
+  function getNum(num) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(num + 1)
+      }, 1000)
+    })
+  }
+
+  //自动执行器，如果一个Generator函数没有执行完，则递归调用
+  function asyncFun(func) {
+    var gen = func();
+
+    function next(data) {
+      var result = gen.next(data);
+      if (result.done) return result.value;
+      result.value.then(function (data) {
+        next(data);
+      });
+    }
+
+    next();
+  }
+
+  // 所需要执行的Generator函数，内部的数据在执行完成一步的promise之后，再调用下一步
+  var func = function* () {
+    var f1 = yield getNum(1);
+    var f2 = yield getNum(f1);
+    console.log(f2);
+  };
+  asyncFun(func);
+</script>
 
 <body>
 
