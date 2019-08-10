@@ -8,11 +8,12 @@
 [煌哥Github](https://github.com/HuangQiii/Daily)  
 [useHooks封装组件](https://github.com/streamich/react-use)  
 [atlaskit(react组件化)](https://atlaskit.atlassian.com/packages/core/inline-edit)  
-[前端系统学习](https://github.com/cucygh/fe-material)
+[前端系统学习博客](https://github.com/cucygh/fe-material)
 ## 算法类
 ## 好的文章类
 * [vscode解决eslint自动格式化配置](https://www.cnblogs.com/benbentu/p/9661998.html)
 * [向恐龙解释现代javascript](https://zhuanlan.zhihu.com/p/38209210)
 * [git高级使用解析](https://gitbook.tw/interview)  
+* [chrome调试工具](https://juejin.im/post/5c09a80151882521c81168a2)
  
   
