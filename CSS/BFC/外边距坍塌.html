@@ -1,0 +1,31 @@
+<!--
+ * @Description: 因为外边距折叠（浏览器这样设置的原因是防止段落间距翻倍），两个div会以最大margin就行设置
+因为这样是一个BFC容器，多以会这样，在每一个DIV外面套上一层div并设置overflow:hidden进行块级作用域上下文。
+ * @version: 
+ * @Author: 朱宇
+ * @LastEditTime: 2019-08-10 11:41:37
+ * @LastEditTime: 2019-08-10 13:29:44
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <div style="overflow: hidden">
+      <div style="width:100px;height:200px;background:red;margin:100px;"></div>
+    </div>
+    <div style="overflow: hidden">
+      <div style="width:100px;height:200px;background:blue;margin:100px;"></div>
+    </div>
+
+  </div>
+</body>
+
+</html>

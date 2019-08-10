@@ -1,3 +1,10 @@
+/*
+ * @Description: 
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-06 11:04:24
+ * @LastEditTime: 2019-08-09 11:38:07
+ */
 console.log('1');
 
 setTimeout(function () {
@@ -13,7 +20,7 @@ setTimeout(function () {
   })
 })
 process.nextTick(function () {
-  console.log('6'); 
+  console.log('6');
 })
 new Promise(function (resolve) {
   console.log('7');
@@ -36,3 +43,4 @@ setTimeout(function () {
 })
 //在node的执行结果是
 //1 7 6 8 2 4 9 11 3 10 5 12
+console.log(process.memoryUsage());

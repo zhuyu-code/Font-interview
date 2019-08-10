@@ -1,0 +1,52 @@
+<!--
+ * @Description: 定位(但是子元素需要知道宽度高度)
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-10 14:04:53
+ * @LastEditTime: 2019-08-10 14:09:56
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .main {
+      width: "1000px";
+      height: 600px;
+      background-color: blue;
+      position: relative;
+    }
+
+    .child {
+      width: 400px;
+      height: 400px;
+      background: red;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-left: -200px;
+      margin-top: -200px
+    }
+
+    span {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="child">
+      <span>adsdsd</span>
+    </div>
+  </div>
+</body>
+
+</html>

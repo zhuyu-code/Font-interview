@@ -1,0 +1,27 @@
+<!--
+ * @Description: 父元素未设置高度由子元素在撑开，如果子元素浮动，那么就脱离文档流了，
+ 因此需要内容创建BFC来格式下下文，就是一个容器，那么这个容器就可以把浮动元素困住。
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-10 11:43:59
+ * @LastEditTime: 2019-08-10 11:49:32
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<div style="border:2px solid red;overflow: hidden;">
+  <div style="width: 100px;height: 100px;background:yellow;float: left;"></div>
+  <div style="width:100px;height: 100px;background:blue;float: right"></div>
+</div>
+
+<body>
+
+</body>
+
+</html>

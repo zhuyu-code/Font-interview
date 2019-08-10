@@ -14,5 +14,6 @@
 * [vscode解决eslint自动格式化配置](https://www.cnblogs.com/benbentu/p/9661998.html)
 * [向恐龙解释现代javascript](https://zhuanlan.zhihu.com/p/38209210)
 * [git高级使用解析](https://gitbook.tw/interview)  
- 
+## vscode用法技巧和插件
+* [文件夹在右键直接打开](https://www.cnblogs.com/zmdblog/p/10202193.html)
   
