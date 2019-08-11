@@ -1,0 +1,44 @@
+<!--
+ * @Description: 防抖：就是触发一个事件后，必须隔指定时间再执行事件。
+  提供性能，降低代码执行频率。使用settimeout来设空隔执行世间。
+  应用于搜索引擎，电梯。
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-11 21:58:33
+ * @LastEditTime: 2019-08-11 22:52:20
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <div id="area" style="width: 600px;height: 400px;background-color: red"></div>
+  <script>
+    var id = document.getElementById("area");
+    var num = 0;
+    var timer = null;
+
+    function thow(fun, time) {
+      clearTimeout(timer);
+      timer = setTimeout(fun, time)
+
+    }
+    id.onmousemove = function () {
+      thow(func, 2000);
+    }
+
+    function func() {
+      console.log(num++)
+    }
+  </script>
+</body>
+
+</html>

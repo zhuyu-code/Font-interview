@@ -1,0 +1,47 @@
+<!--
+ * @Description: 节流，在一定时间内执行一次。
+ 减少代码执行频率，提高性能
+ 比如onkeyUp,onmousemove等点击一下就要执行一次的
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-11 22:45:57
+ * @LastEditTime: 2019-08-11 22:58:15
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="key" style="width: 600px;height: 400px;background-color: red"></div>
+  <script>
+    var num = 0;
+    var key = document.getElementById("key");
+    var start = 0;
+
+    function thow(fun, time) {
+      if (!start) {
+        start = Date.now();
+      }
+      delay = Date.now();
+      if (delay - start > time) {
+        func();
+        start = 0;
+      }
+    }
+    key.onmousemove = function () {
+      thow(func, 2000);
+    }
+
+    function func() {
+      console.log(num++);
+    }
+  </script>
+</body>
+
+</html>
