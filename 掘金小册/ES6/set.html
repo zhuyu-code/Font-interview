@@ -3,7 +3,7 @@
  * @version: 
  * @Author: 朱宇
  * @Date: 2019-08-05 12:00:15
- * @LastEditTime: 2019-08-12 14:57:48
+ * @LastEditTime: 2019-08-12 15:54:31
  -->
 <!DOCTYPE html>
 <html lang="en">
@@ -34,8 +34,25 @@
         for (let i of set) {
             console.log(i)
         }
-        console.log(set);
-        console.log(set.clear())
+        console.log(set)
+        console.log([...set])
+        console.log(set.keys());
+        console.log(set.values())
+
+        //set默认迭代器方法是values()是一个数组，可以使用数组map和filter方法
+        //set很容易实现交集，并集，差集
+        var set1 = new Set([1, 5, 9, 8]);
+        var set2 = new Set([2, 5, 6, 8]);
+        var intersect = new Set([...set1].filter(value => {
+            return set2.has(value)
+        }))
+        var union = new Set([...set1], [...set2]);
+        var difference = new Set([...set1].filter(value => {
+            return !set2.has(value);
+        }))
+        console.log(intersect, union, difference)
+        console.log()
+        set.clear() //清空set
     </script>
 </body>
 

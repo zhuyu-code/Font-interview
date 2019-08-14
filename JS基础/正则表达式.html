@@ -1,0 +1,32 @@
+<!--
+ * @Description:正则表达式 
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-14 08:56:29
+ * @LastEditTime: 2019-08-14 10:02:32
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /*
+    ^以什么开头，[0-9a-z_-]里面限制类型，{3,5}限制其前面的范围。$表示以什么结尾
+    单独写一个[0-9],后面不写+都是可以匹配无限制的数字的情况下。可以是0,1,n,但是+是1,n,?是0,1
+    */
+    const reg = /^[0-9]/;
+    const reg2 = /[0-9]/;
+    const reg3 = /^[0-9a-z_-]abc$/;
+    const str = "14567898";
+    console.log(reg2.test(str));
+  </script>
+</body>
+
+</html>
