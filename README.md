@@ -6,7 +6,7 @@
  * @LastEditTime: 2019-08-10 21:26:12
  -->
 # Font-interview
-这里是关于前端面试的一些算法和基础知识  
+这里是关于前端的一些算法和基础知识  
  ![朱宇](/image/1.gif)
 ## 学习网站
 [高级前端进阶之路](https://muyiy.vip/blog/)  
