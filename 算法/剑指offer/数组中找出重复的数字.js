@@ -5,7 +5,7 @@
  * @version: 
  * @Author: 朱宇
  * @Date: 2019-08-13 21:22:22
- * @LastEditTime: 2019-08-14 18:04:44
+ * @LastEditTime: 2019-08-15 11:11:40
  */
 
 const arr = [2, 1, 5, 6, 5, 7, 6, 0];
@@ -76,3 +76,23 @@ function chat(arr) {
   }
 }
 console.log(chat(arr));
+//方法4，使用Object构造哈希map
+function repeatArray3(arr) {
+  var obj = {};
+  for (let i = 0; i < arr.length; i++) {
+    if (!obj[arr[i]]) {
+      obj[arr[i]] = 1
+    } else {
+      obj[arr[i]]++;
+    }
+  }
+  var repeat_key = [];
+  for (let i in obj) {
+    if (obj[i] > 1) {
+      repeat_key.push(parseInt(i))
+    }
+  }
+  return repeat_key;
+}
+console.log("方法4");
+console.log(repeatArray3(arr));

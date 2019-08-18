@@ -2,17 +2,10 @@
  * @Description: 
  * @version: 
  * @Author: 朱宇
- * @Date: 2019-08-13 09:30:53
- * @LastEditTime: 2019-08-13 11:40:57
+ * @Date: 2019-08-16 10:11:15
+ * @LastEditTime: 2019-08-16 10:14:00
  -->
 <template>
-  <div class="home"></div>
+  <div class="home">this is a home</div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {};
-  }
-};
-</script>

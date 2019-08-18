@@ -1,9 +1,10 @@
-/*
+
+/*蘑菇街校招
  * @Description: 最小公约数
  * @version: 
  * @Author: 朱宇
  * @Date: 2019-08-14 12:10:07
- * @LastEditTime: 2019-08-14 17:36:34
+ * @LastEditTime: 2019-08-18 08:50:09
  */
 //方法一：辗转相除法
 function divisor1(a, b) {
@@ -21,7 +22,6 @@ function divisor1(a, b) {
     b = temp
   }
   //使用一个变量存储除数，因为最后除数才是最小公约数
-  var tempdiv = b
   while (a % b !== 0) {
     tempdiv = a % b;
     a = b;

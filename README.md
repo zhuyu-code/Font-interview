@@ -3,7 +3,7 @@
  * @version: 
  * @Author: 朱宇
  * @Date: 2019-08-10 21:25:23
- * @LastEditTime: 2019-08-14 23:18:04
+ * @LastEditTime: 2019-08-17 23:31:32
  -->
 # Font-interview
 这里是关于前端的一些算法和基础知识  
@@ -17,11 +17,16 @@
 [atlaskit(react组件化)](https://atlaskit.atlassian.com/packages/core/inline-edit)  
 [前端系统学习博客](https://github.com/cucygh/fe-material)  
 [大前端图解](https://lucifer.ren/fe-interview)
+[前端面试与进阶指南](https://www.cxymsg.com/guide/)
 ## 算法类
 ## 好的文章类
 * [vscode解决eslint自动格式化配置](https://www.cnblogs.com/benbentu/p/9661998.html)
 * [向恐龙解释现代javascript](https://zhuanlan.zhihu.com/p/38209210)
 * [git高级使用解析](https://gitbook.tw/interview)  
+* [跨域问题](https://github.com/happylindz/blog/issues/3)
+* [正则表达式MDN总结](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions)
+* [正则表达式在线测试](http://tool.oschina.net/regex/)
+* [正则表达式正向预查匹配，正向预查不匹配](https://www.jianshu.com/p/9c4979a3b7e4)
 ## vscode用法技巧和插件
 * [文件夹在右键直接打开](https://www.cnblogs.com/zmdblog/p/10202193.html)
 

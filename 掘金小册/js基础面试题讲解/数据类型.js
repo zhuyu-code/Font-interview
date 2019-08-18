@@ -46,4 +46,4 @@ var b = {
 }
 console.log(b + 2);
 console.log(true == 1);
-console.log([] == ![])
+console.log([] == ![]) //全局由对象转化为字符串进行操作。
