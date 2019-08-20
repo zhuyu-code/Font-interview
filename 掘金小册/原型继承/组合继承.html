@@ -1,0 +1,48 @@
+<!--
+ * @Description: 组合继承,就是call和原型链相结合，
+ 原因，call只能复制父类构造函数的值,原型继承只能复制原型的内容，结合一下就都能了。
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-20 22:24:37
+ * @LastEditTime: 2019-08-20 23:19:45
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Person(obj) {
+      this.name = obj.name;
+      this.age = obj.age
+    }
+    Person.prototype.eat = function (weight, height) {
+      console.log("体重" + weight + "身高" + height)
+    }
+
+    function Student(obj) {
+      Person.call(this, obj);
+    }
+
+    var p = new Person({
+      name: "zhuyu",
+      age: 21
+    })
+    p.eat("200", "200");
+    Student.prototype = p;
+    Student.prototype.construtor = Student;
+    var stu = new Student({
+      name: "zhuyu2",
+      age: 21
+    })
+    stu.eat("168", "200");
+  </script>
+</body>
+
+</html>

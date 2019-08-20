@@ -1,0 +1,32 @@
+<!--
+ * @Description: 
+ 优点：减少代码冗余，方便统一操作
+ 缺点：耦合性强
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-20 17:37:55
+ * @LastEditTime: 2019-08-20 20:16:52
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // console.log(typeof Function.prototype)
+    console.log(typeof (new Function()))
+    console.log(typeof (new Array()));
+    console.log(typeof (Array.__proto__));
+    console.log(typeof Object)
+    console.log(typeof Object.prototype)
+    console.log(typeof (new Object))
+  </script>
+</body>
+
+</html>

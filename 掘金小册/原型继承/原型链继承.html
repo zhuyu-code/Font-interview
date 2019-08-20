@@ -1,0 +1,49 @@
+<!--
+ * @Description:原型继承
+ 使用父类的对象作为基本，因为他有父类的构造函数的值看,也有父类原型对象的值。
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-20 20:43:40
+ * @LastEditTime: 2019-08-20 23:12:26
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Person(obj) {
+      this.name = obj.name;
+      this.age = obj.age
+    }
+    Person.prototype.eat = function (weight, height) {
+      console.log("体重" + weight + "身高" + height)
+    }
+
+    function Student(obj) {
+      this.name = obj.name;
+      this.age = obj.age
+    }
+
+    var p = new Person({
+      name: "zhuyu",
+      age: 21
+    })
+    p.eat("200", "200");
+    Student.prototype = p;
+    Student.prototype.construtor = Student;
+    var stu = new Student({
+      name: "zhuyu2",
+      age: 21
+    })
+    stu.eat("168", "200");
+  </script>
+</body>
+
+</html>

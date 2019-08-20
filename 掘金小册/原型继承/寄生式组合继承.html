@@ -1,0 +1,52 @@
+<!--
+ * @Description: 寄生式组合继承，
+ 组合继承已经比较完美了，只是加载两次构造函数的内容，虽然优先级先加载我的构造函数的内容，但是这样损耗了性能，
+ 所以为了解决这个问题，那么就采用不继承p对象，变成继承原型对象，但是这又有一个问题，问题就是Student.prototype=Person.prototype,
+ 就不知道是哪一个修改原型，为了避免这个问题，采用寄生式，也就是创建一个对象，但是这个对象可以访问他的内容
+ 就是使用寄生式继承（新建一个原型对象）+组合继承
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-20 22:24:49
+ * @LastEditTime: 2019-08-20 23:43:43
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Person(obj) {
+      this.name = obj.name;
+      this.age = obj.age;
+      set = function () {
+        console.log("zhuyu");
+      }
+    }
+    Person.prototype.link = function (name, age) {
+      console.log("名字" + name + "年龄" + age);
+    }
+
+    function Student() {
+      Person.call(this, {
+        name: "zhuyu",
+        age: 21
+      })
+    }
+
+    function Temp() {}
+    Temp.prototype = Person.prototype;
+    var stuDto = new Temp();
+    Student.prototype = stuDto;
+    Student.prototype.constrcutor = Student
+    var a = new Student()
+    console.log(a.name)
+  </script>
+</body>
+
+</html>
