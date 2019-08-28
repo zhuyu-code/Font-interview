@@ -3,20 +3,21 @@
  * @version: 
  * @Author: 朱宇
  * @Date: 2019-08-10 21:25:23
- * @LastEditTime: 2019-08-18 19:28:35
+ * @LastEditTime: 2019-08-28 16:35:09
  -->
 # Font-interview
 这里是关于前端的一些算法和基础知识  
  ![朱宇](/image/1.gif)
 ## 学习网站
 [高级前端进阶之路](https://muyiy.vip/blog/)  
+[awesome.conf.js](http://conardli.top/docs/JavaScript/)  
 [前端每日算法](https://github.com/Advanced-Frontend/Daily-Interview-Question)  
 [前端进阶之道](https://yuchengkai.cn/)  
 [煌哥Github](https://github.com/HuangQiii/Daily)  
 [useHooks封装组件](https://github.com/streamich/react-use)  
 [atlaskit(react组件化)](https://atlaskit.atlassian.com/packages/core/inline-edit)  
 [前端系统学习博客](https://github.com/cucygh/fe-material)  
-[大前端图解](https://lucifer.ren/fe-interview)
+[大前端图解](https://lucifer.ren/fe-interview)  
 [前端面试与进阶指南](https://www.cxymsg.com/guide/)
 ## 算法类
 ## 好的文章类

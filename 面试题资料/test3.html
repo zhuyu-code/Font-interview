@@ -1,0 +1,43 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-25 18:00:22
+ * @LastEditTime: 2019-08-25 18:24:44
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function combineTwoString(str1, str2) {
+      const reg = new RegExp("\\d{1,4}", "g");
+      const array = str1.match(reg);
+      const arr = str2.split('');
+      let l = '';
+      array.forEach((v, i) => {
+        if (arr[i]) {
+          l = `${l}${v}${arr[i]}`;
+        } else {
+          l = `${l}${v}`;
+        }
+      });
+      if (array.length < arr.length) {
+        l = `${l}${arr.slice(array.length).join('')}`
+      }
+      return l.split("").join(" ");
+    }
+    var a = String(123456789);
+    var b = abc.toString()
+    console.log(combineTwoString(a, b))
+  </script>
+</body>
+
+</html>

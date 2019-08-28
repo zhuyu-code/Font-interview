@@ -1,0 +1,64 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-25 17:21:35
+ * @LastEditTime: 2019-08-25 17:59:51
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function checkUpgrade(input) {
+      const inputArr = input.split(/[(\r\n)\r\n]+/);
+      console.log(inputArr)
+      const num = inputArr[0];
+      const arr = inputArr.slice(1);
+
+      const res = [];
+
+      arr.forEach((v) => {
+        const f = v.split(/ /)[0];
+        const l = v.split(/ /)[1];
+        // console.log(v)
+        // console.log(f);
+        // console.log(l)
+        // console.log(v);
+
+        res.push(check(f, l));
+      });
+
+      function check(f, l) {
+        let fArr = f.split('.');
+        console.log(fArr)
+        let lArr = l.split('.');
+        console.log(lArr)
+        if (fArr.length > lArr.length) {
+          lArr = lArr.concat(new Array(fArr.length - lArr.length).fill(0));
+        }
+        if (fArr.length < lArr.length) {
+          fArr = fArr.concat(new Array(lArr.length - fArr.length).fill(0));
+        }
+        const fString = fArr.join('');
+        const lString = lArr.join('');
+        return Number(fString) < Number(lString);
+      }
+
+      return res.join('\n');
+    }
+    var input = `2
+6.6.6 6.6.7
+1 1.0`
+    // console.log(checkUpgrade(input))
+  </script>
+</body>
+
+</html>

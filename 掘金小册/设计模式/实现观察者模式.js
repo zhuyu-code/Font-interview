@@ -4,9 +4,12 @@
  * @version: 
  * @Author: 朱宇
  * @Date: 2019-08-19 09:03:23
- * @LastEditTime: 2019-08-19 09:45:59
+ * @LastEditTime: 2019-08-23 13:17:23
  */
 // 定义主题， 也就是被观察者
+/*
+  被观察者更改数据触发观察者行为
+*/
 class Subject {
   constructor() {
     this.state = 0;

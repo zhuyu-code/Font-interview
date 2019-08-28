@@ -1,0 +1,30 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-26 23:40:18
+ * @LastEditTime: 2019-08-26 23:54:34
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function Person() {
+      this.c = this.__proto__.c;
+    }
+    var p1 = new Person();
+    var p2 = new Person();
+    p1.c = "zhuyu";
+    console.log(p2.c)
+  </script>
+</body>
+
+</html>

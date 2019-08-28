@@ -1,0 +1,46 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-27 08:01:45
+ * @LastEditTime: 2019-08-27 08:22:44
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script type="text/html">
+    var proxy = new Proxy({}, {
+    get: function () {
+    return 30
+    },
+    set: function () {
+    return 35
+    }
+    })
+    console.log(proxy.name);
+
+    let proto = new Proxy({}, {
+    get(target, propertyKey, receiver) {
+    console.log('GET ' + propertyKey);
+    return target[propertyKey];
+    }
+    });
+
+    let obj = Object.create(proto);
+    obj.foo // "GET foo"
+    console.log(obj.foo)
+  </script>
+  <script>
+    console.log(Number('a'))
+  </script>
+</body>
+
+</html>

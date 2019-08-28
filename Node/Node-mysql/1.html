@@ -1,0 +1,59 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-27 20:12:10
+ * @LastEditTime: 2019-08-27 20:28:56
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    var N, M;
+    // 每组第一行是2个整数，N和M，至于为啥用while，因为是多组。
+    N = readInt();
+    M = readInt();
+    var arr = []
+    for (let i = 0; i < N; i++) {
+      var brr = []
+      for (let j = 0; j < M; j++) {
+        brr.push(readInt())
+      }
+      arr.push(brr)
+    }
+
+    function final(arr, n, m) {
+      const columnArr = getColumnFromRow(arr, n, m);
+
+      const maxArr = columnArr.map(arr => getMax(arr));
+
+      return maxArr.reduce((a, b) => a + b);
+
+      function getColumnFromRow(arr, n, m) {
+        const res = [];
+        for (let i = 0; i < m; i++) {
+          for (let v = 0; v < n; v++) {
+            res[i] = res[i] || [];
+            res[i].push(arr[v][i]);
+          }
+        }
+        return res;
+      }
+
+      function getMax(arr) {
+        return Math.max(...arr);
+      }
+    }
+    print(final(arr, N, M))
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-26 23:00:48
+ * @LastEditTime: 2019-08-27 09:22:03
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <script type="text/html">
+    //方法一
+    function Person() {
+    this.str = this.__proto__.str;
+    }
+    var qihuang = new Person();
+    var zhuyu = new Person();
+  </script>
+  <script type="text/html">
+    //方法二
+    function Person() {
+    this.name = "name";
+    this.age = 21;
+    }
+    Person.prototype.c = "zhuyu";
+    // 采用寄生式继承
+    function Temp() {
+    Person.call(this)
+    }
+    Temp.prototype = Person.prototype;
+    var stuDto = new Temp();
+    stuDto.c = "qihuang";
+    var stuDto2 = new Person();
+    console.log(stuDto.c);
+    console.log(stuDto2.c)
+    console.log(stuDto.name);
+    console.log(stuDto.age);
+    console.log(stuDto2.name);
+    console.log(stuDto2.age)
+  </script>
+  <script type="text/html">
+    //方法三
+    //采用proxy包装一层
+    function Person() {
+
+    }
+    Person.prototype.c = "name";
+    var proxy = new Proxy(Person.prototype, {
+    get: function (target, property, receiver) {
+    if (property == 'c') {
+    if (map.get('c')) {
+    return map.get('c')
+    } else {
+    return target.c
+    }
+    }
+    },
+    set: function (target, key, value, receiver) {
+
+    if (key == 'c') {
+    map.set(key, value);
+    }
+    }
+    })
+    var obj1 = Object.create(proxy);;
+    var obj2 = Object.create(proxy);
+
+    obj1.c = "zhuyu";
+    console.log(obj2.c)
+  </script>
+  <script>
+  </script>
+</body>
+
+</html>
