@@ -3,7 +3,7 @@
  * @version: 
  * @Author: 朱宇
  * @Date: 2019-08-14 22:00:04
- * @LastEditTime: 2019-08-15 18:56:53
+ * @LastEditTime: 2019-08-29 21:46:53
  */
 //最简单的深拷贝使用JSON.parse(JSON.stringify(object))
 //局限性 
@@ -16,7 +16,8 @@ var o = {
   age: 21,
   ts: {
     weight: 50,
-    height: 180
+    height: 180,
+    arr: [15, 4, 5, 6]
   }
 }
 var b = {
@@ -32,18 +33,16 @@ function deepCopy(fa, fb) {
     if (!isObject(fb[key])) {
       fa[key] = fb[key]
     } else {
-      tempb = fb[key];
-      tempa = new fb[key].constructor;
-      deepCopy(tempa, tempb);
-      fa[key] = fb[key]
+      tempConstruc = new fb[key].constructor;
+      deepCopy(tempConstruc, fb[key]);
+      fa[key] = tempConstruc;
     }
   }
 }
+
 deepCopy(b, o);
-o.name = "zhuming";
-o.ts = {
-  weight: 100,
-  height: 170
-}
+var arr1 = [1, 4, 8];
+var arr2 = [];
+deepCopy(arr2, arr1)
+console.log(arr2);
 console.log(b);
-console.log(o)

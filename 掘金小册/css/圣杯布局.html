@@ -1,0 +1,65 @@
+<!--
+ * @Description: 
+ 1.布局样式，main包住三个并行的left,content,right
+ 2.main左右规定距离空开200px
+ 3.三个并行的分别设置宽度，content100%,left,right:200
+ 4.三个并行设置浮动
+ 4.margin-left:-100%,margin-right:-200px，这样就会盖住一部分content
+ 5.left,right,content设置positive相对地位，left:-200px;,right:-200px
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-28 23:06:53
+ * @LastEditTime: 2019-08-28 23:25:54
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .main {
+      margin: 0 300px 0 200px;
+    }
+
+    .content,
+    .left,
+    .right {
+      height: 100px;
+      float: left;
+      position: relative;
+    }
+
+    .content {
+      width: 100%;
+      background-color: red;
+
+    }
+
+    .left {
+      background-color: blue;
+      width: 200px;
+      margin-left: -100%;
+      left: -200px;
+    }
+
+    .right {
+      background-color: green;
+      width: 300px;
+      margin-left: -300px;
+      right: -300px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="main">
+    <div class="content">1111</div>
+    <div class="left">2222</div>
+    <div class="right">3333</div>
+  </div>
+</body>
+
+</html>

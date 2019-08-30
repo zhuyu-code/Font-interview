@@ -1,0 +1,64 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-29 13:34:06
+ * @LastEditTime: 2019-08-29 13:58:58
+ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .main {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+
+    .content {
+      width: 100px;
+      height: 100px;
+      background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="ma" class="main">
+    <div class="content">
+
+    </div>
+  </div>
+  <script>
+    var a = document.getElementById("ma")
+    // a.onmousemove = function () {
+    //   console.log("onmousemove")
+    // }
+    a.onmouseover = function () {
+      console.log("onmouseover")
+    } //支持冒泡，指定元素引入，也就是在子元素中又会重新执行，和enter不同的是进入子元素，enter不再执行，
+    a.onmouseout = function () {
+      console.log("onmouseout")
+    }
+    a.onmouseleave = function () {
+      console.log("onmouseleave")
+    }
+    a.onmouseup = function () {
+      console.log("onmouseup")
+    }
+    a.onmousedown = function () {
+      console.log("onmousedown")
+    }
+    a.onmouseenter = function () {
+      console.log("onmouseenter")
+    }
+    console.log("111222333".slice(-4,))
+  </script>
+</body>
+
+</html>

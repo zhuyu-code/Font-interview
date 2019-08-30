@@ -3,29 +3,30 @@
  * @version: 
  * @Author: 朱宇
  * @Date: 2019-08-20 15:28:23
- * @LastEditTime: 2019-08-20 23:55:30
+ * @LastEditTime: 2019-08-30 09:23:28
  */
-Function.prototype.myCall = function (context = global, ...args) {
-
+Function.prototype.myCall = function (context = window, ...args) {
   context = context || window;
-  const fn = Symbol();
+  var fn = Symbol();
   context[fn] = this;
   const result = context[fn](...args);
   delete context[fn];
   return result;
 }
-class Person {
-  eat() {
-    console.log("吃饭")
+class A {
+  constructor(name) {
+    this.name = name
+  }
+  create() {
+    console.log("创建函数");
+    console.log(this)
   }
 }
-
-function eat2() {
-  console.log("吃多点")
+var a = new A("zhuyu");
+class B {
+  constructor(name) {
+    this.name = name
+  }
 }
-class Student {
-
-}
-var p = new Person();
-var s = new Student();
-eat2.myCall();
+var b = new B("zhuming");
+a.create.call(b)
