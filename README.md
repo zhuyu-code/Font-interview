@@ -3,7 +3,7 @@
  * @version: 
  * @Author: 朱宇
  * @Date: 2019-08-10 21:25:23
- * @LastEditTime: 2019-09-02 08:50:23
+ * @LastEditTime: 2019-09-10 09:26:46
  -->
 # Font-interview
 这里是关于前端的一些算法和基础知识  
@@ -29,7 +29,8 @@
 * [正则表达式MDN总结](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions)
 * [正则表达式在线测试](http://tool.oschina.net/regex/)
 * [正则表达式正向预查匹配，正向预查不匹配](https://www.jianshu.com/p/9c4979a3b7e4)
-* [node和yarn命令对比](https://www.jianshu.com/p/e7209ecc120d)
+* [node和yarn命令对比](https://www.jianshu.com/p/e7209ecc120d)  
+* [promise.all和promise.race的使用](https://www.jianshu.com/p/7e60fc1be1b2)
 ## vscode用法技巧和插件
 * [文件夹在右键直接打开](https://www.cnblogs.com/zmdblog/p/10202193.html)
 

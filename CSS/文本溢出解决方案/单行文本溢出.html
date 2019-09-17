@@ -1,0 +1,38 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-09-17 10:08:45
+ * @LastEditTime: 2019-09-17 10:11:03
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .main{
+      width: 100px;
+      height: 30px;
+      background-color: red;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+      使用正则表达式将单词与单个文字切割出来存入words
+      加上 '...'
+      判断scrollHeight与clientHeight，超出的话就从words中pop一个出来
+      这是一段测试文字，this is some test text，测试文字，测试文字测
+      const p = document.querySelector('p')
+      let words = p.innerHTML.split(/(?<=[\u4e00-\u9fa5])|(?<=\w*?\b)/g)
+  
+      }
+  </div>
+</body>
+</html>

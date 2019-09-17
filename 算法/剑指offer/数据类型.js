@@ -3,7 +3,7 @@
  * @version: 
  * @Author: 朱宇
  * @Date: 2019-08-14 18:06:46
- * @LastEditTime: 2019-08-14 21:38:15
+ * @LastEditTime: 2019-09-14 11:31:27
  */
 //六种基本数据类型number boolean string null undefined symbol,基础类型的数字是没有函数可以调用的。
 //注意可能1.当做一个整体

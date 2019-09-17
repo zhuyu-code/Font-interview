@@ -1,8 +1,15 @@
+<!--
+ * @Description: 
+ * @version: 
+ * @Author: 朱宇
+ * @Date: 2019-08-10 13:32:40
+ * @LastEditTime: 2019-09-05 08:42:22
+ -->
 
 ## 触发BFC
 html 根元素
-float 浮动
-绝对定位
+float 浮动(除开none)
+绝对定位(absolute,fixed)
 overflow 不为 visiable
 display 为表格布局或者弹性布局
 ## BFC 特性：

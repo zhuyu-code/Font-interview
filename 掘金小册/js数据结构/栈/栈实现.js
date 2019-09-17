@@ -3,8 +3,9 @@
  * @version: 
  * @Author: 朱宇
  * @Date: 2019-08-18 20:49:39
- * @LastEditTime: 2019-08-18 21:07:43
+ * @LastEditTime: 2019-09-14 08:53:10
  */
+//栈有5个方法push,pop,peek,getCount,isEmpty
 class Stack {
   construcor() {
     this.stack = [];

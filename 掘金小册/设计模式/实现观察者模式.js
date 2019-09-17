@@ -4,9 +4,9 @@
  * @version: 
  * @Author: 朱宇
  * @Date: 2019-08-19 09:03:23
- * @LastEditTime: 2019-08-23 13:17:23
+ * @LastEditTime: 2019-09-09 09:04:17
  */
-// 定义主题， 也就是被观察者
+// 定义主题， 也就是被观察者，发布
 /*
   被观察者更改数据触发观察者行为
 */
@@ -32,7 +32,7 @@ class Subject {
   }
 }
 
-//定义观察者
+//定义观察者，订阅
 class Observer {
   constructor(name, subject) {
     this.name = name;

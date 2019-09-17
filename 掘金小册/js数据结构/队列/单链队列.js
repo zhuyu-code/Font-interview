@@ -8,7 +8,7 @@
  */
 class Queue {
   constructor() {
-    this.queue = [];
+            this.queue = [];
   }
   //入列
   enQueue(item) {
