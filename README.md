@@ -19,7 +19,8 @@
 [前端系统学习博客](https://github.com/cucygh/fe-material)  
 [大前端图解](https://lucifer.ren/fe-interview)  
 [前端面试与进阶指南](https://www.cxymsg.com/guide/)  
-[100篇好的文章总结](https://github.com/qq449245884/xiaozhi)
+[100篇好的文章总结](https://github.com/qq449245884/xiaozhi)  
+[react hooks学习](https://juejin.im/post/5cf475d66fb9a07ea944594e)
 ## 算法类
 ## 好的文章类
 * [vscode解决eslint自动格式化配置](https://www.cnblogs.com/benbentu/p/9661998.html)
